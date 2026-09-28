@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="K07 MEDIA - Reels, video editing, AI videos, poster design, video shoots and social media services.">
+<title>K07 MEDIA | We Create. You Grow.</title>
+
+<style>
+:root{
+  --yellow:#ffc107;
+  --yellow2:#ffcf3f;
+  --black:#070707;
+  --dark:#101010;
+  --card:#151515;
+  --white:#fff;
+  --muted:#b9b9b9;
+  --border:rgba(255,193,7,.22);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--black);
+  color:var(--white);
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+
+/* NAVBAR */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(7,7,7,.88);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav-inner{
+  min-height:76px;display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:2px;
+}
+.logo-mark{
+  font-size:31px;line-height:1;color:#fff;
+}
+.logo-mark span{color:var(--yellow)}
+.logo-text{font-size:11px;letter-spacing:4px;color:#ddd;margin-top:-2px}
+.logo-wrap{display:flex;flex-direction:column}
+.menu{display:flex;gap:26px;align-items:center}
+.menu a{font-size:14px;color:#ddd;transition:.25s}
+.menu a:hover{color:var(--yellow)}
+.nav-cta{
+  padding:11px 17px;border-radius:30px;background:var(--yellow);
+  color:#000!important;font-weight:800;
+}
+.hamburger{display:none;font-size:28px;cursor:pointer}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 80% 30%,rgba(255,193,7,.15),transparent 30%),
+    radial-gradient(circle at 15% 80%,rgba(255,193,7,.08),transparent 28%),
+    var(--black);
+}
+.hero:before{
+  content:"";position:absolute;width:500px;height:500px;border-radius:50%;
+  right:-180px;top:120px;border:1px solid rgba(255,193,7,.16);
+  box-shadow:0 0 100px rgba(255,193,7,.08);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:center;
+  padding-top:85px;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 13px;
+  border:1px solid var(--border);border-radius:30px;color:var(--yellow);
+  font-size:12px;font-weight:800;letter-spacing:1px;margin-bottom:22px;
+}
+.hero h1{font-size:clamp(48px,7vw,88px);line-height:.94;letter-spacing:-3px;margin-bottom:24px}
+.hero h1 .yellow{color:var(--yellow)}
+.hero p{font-size:18px;color:var(--muted);max-width:620px}
+.buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;padding:14px 21px;
+  border-radius:9px;font-weight:800;font-size:14px;border:1px solid var(--yellow);
+  transition:.25s;
+}
+.btn-primary{background:var(--yellow);color:#000}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(255,193,7,.2)}
+.btn-outline{color:#fff;background:transparent}
+.btn-outline:hover{background:rgba(255,193,7,.08)}
+.hero-card{
+  min-height:470px;border:1px solid var(--border);border-radius:28px;
+  background:linear-gradient(145deg,#191919,#080808);
+  position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+}
+.hero-card:after{
+  content:"";position:absolute;width:360px;height:360px;border-radius:50%;
+  background:rgba(255,193,7,.12);filter:blur(50px);
+}
+.camera{
+  position:relative;z-index:2;width:260px;height:190px;border:8px solid #222;
+  border-radius:25px;background:#111;box-shadow:0 0 0 2px #555,0 30px 70px #000;
+}
+.camera:before{
+  content:"";position:absolute;left:72px;top:-37px;width:105px;height:40px;
+  background:#171717;border-radius:14px 14px 0 0;border:5px solid #222;
+}
+.lens{
+  position:absolute;left:67px;top:39px;width:110px;height:110px;border-radius:50%;
+  background:radial-gradient(circle,#111 0 23%,#333 24% 40%,#0b0b0b 41% 65%,#555 66% 69%,#101010 70%);
+  border:8px solid #292929;
+}
+.camera-brand{
+  position:absolute;right:18px;top:20px;color:var(--yellow);font-weight:900;font-size:13px;
+}
+
+/* SECTIONS */
+section{padding:105px 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 48px}
+.kicker{color:var(--yellow);font-size:12px;font-weight:900;letter-spacing:3px;text-transform:uppercase}
+.section-head h2{font-size:clamp(34px,5vw,56px);line-height:1.05;margin:10px 0 14px}
+.section-head p{color:var(--muted)}
+
+.services{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+}
+.service{
+  padding:28px;border:1px solid rgba(255,255,255,.08);border-radius:18px;
+  background:linear-gradient(145deg,#171717,#0d0d0d);transition:.3s;
+}
+.service:hover{transform:translateY(-7px);border-color:var(--border)}
+.icon{
+  width:48px;height:48px;border-radius:12px;display:grid;place-items:center;
+  background:rgba(255,193,7,.1);color:var(--yellow);font-size:22px;margin-bottom:20px;
+}
+.service h3{font-size:19px;margin-bottom:8px}
+.service p{color:var(--muted);font-size:14px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+.about-box{
+  border:1px solid var(--border);border-radius:25px;padding:38px;
+  background:linear-gradient(135deg,#171717,#0a0a0a);
+}
+.about-logo{
+  font-size:76px;font-weight:1000;line-height:1;letter-spacing:-5px;
+}
+.about-logo span{color:var(--yellow)}
+.about-media{
+  border-radius:25px;min-height:390px;position:relative;overflow:hidden;
+  background:
+   linear-gradient(135deg,rgba(255,193,7,.22),transparent),
+   repeating-linear-gradient(135deg,#111 0 12px,#151515 12px 24px);
+  display:grid;place-items:center;border:1px solid var(--border);
+}
+.play{
+  width:90px;height:90px;border-radius:50%;background:var(--yellow);color:#000;
+  display:grid;place-items:center;font-size:30px;padding-left:5px;
+  box-shadow:0 0 0 12px rgba(255,193,7,.1);
+}
+
+/* PROCESS */
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{position:relative;padding:28px;border-top:2px solid var(--yellow);background:#101010;border-radius:0 0 15px 15px}
+.num{font-size:44px;font-weight:900;color:rgba(255,193,7,.22)}
+.step h3{margin:8px 0}
+.step p{font-size:14px;color:var(--muted)}
+
+/* PACKAGES */
+.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.package{
+  padding:32px;border-radius:20px;background:#111;border:1px solid rgba(255,255,255,.1);
+}
+.package.featured{border:2px solid var(--yellow);transform:translateY(-8px)}
+.package h3{font-size:24px}
+.price{font-size:40px;font-weight:900;margin:13px 0;color:var(--yellow)}
+.price small{font-size:13px;color:#aaa}
+.package ul{list-style:none;margin:22px 0}
+.package li{padding:8px 0;color:#ddd;border-bottom:1px solid rgba(255,255,255,.06)}
+.package li:before{content:"✓";color:var(--yellow);font-weight:900;margin-right:10px}
+
+/* CTA */
+.cta{
+  margin-top:30px;padding:55px;border-radius:28px;text-align:center;
+  background:linear-gradient(135deg,#1b1b1b,#090909);
+  border:1px solid var(--border);
+}
+.cta h2{font-size:clamp(32px,5vw,54px);line-height:1.05;margin:10px 0}
+.cta p{color:var(--muted);max-width:650px;margin:auto}
+
+/* FOOTER */
+footer{padding:35px 0;border-top:1px solid rgba(255,255,255,.08)}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.footer-inner p{color:#888;font-size:13px}
+.social{display:flex;gap:12px}
+.social a{color:#aaa}
+.social a:hover{color:var(--yellow)}
+
+/* MOBILE */
+@media(max-width:850px){
+  .menu{display:none;position:absolute;top:76px;left:0;right:0;background:#090909;
+    padding:20px;flex-direction:column;border-bottom:1px solid #222}
+  .menu.active{display:flex}
+  .hamburger{display:block}
+  .hero-grid,.about-grid{grid-template-columns:1fr}
+  .hero{min-height:auto;padding-bottom:80px}
+  .hero-card{min-height:350px}
+  .services{grid-template-columns:1fr 1fr}
+  .process{grid-template-columns:1fr 1fr}
+  .packages{grid-template-columns:1fr}
+  .package.featured{transform:none}
+}
+@media(max-width:550px){
+  section{padding:75px 0}
+  .services,.process{grid-template-columns:1fr}
+  .hero h1{letter-spacing:-2px}
+  .hero p{font-size:16px}
+  .hero-card{min-height:300px}
+  .camera{transform:scale(.78)}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#home" aria-label="K07 Media home">
+      <div class="logo-wrap">
+        <div class="logo-mark">K<span>O</span>7</div>
+        <div class="logo-text">MEDIA</div>
+      </div>
+    </a>
+
+    <nav class="menu" id="menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">● CREATIVE DIGITAL MEDIA AGENCY</div>
+      <h1>Your Brand.<br><span class="yellow">Our Creativity.</span><br>Big Impact.</h1>
+      <p>
+        K07 MEDIA helps shops, businesses, brands and creators build a professional
+        online presence with reels, video editing, AI videos, posters, shoots and
+        social media content.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://wa.me/919644538670?text=Hello%20K07%20MEDIA%2C%20I%20want%20to%20know%20about%20your%20services." target="_blank">WhatsApp Us</a>
+        <a class="btn btn-outline" href="#services">Explore Services</a>
+      </div>
+    </div>
+
+    <div class="hero-card" aria-label="K07 Media creative studio">
+      <div class="camera">
+        <div class="lens"></div>
+        <div class="camera-brand">K07 MEDIA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-box">
+      <div class="kicker">About K07 Media</div>
+      <div class="about-logo">K<span>O</span>7</div>
+      <h2>We Create. <span style="color:var(--yellow)">You Grow.</span></h2>
+      <p style="color:var(--muted);margin-top:15px">
+        Hum creative ideas ko professional digital content mein convert karte hain,
+        taaki aapka business social media par clear, attractive aur memorable nazar aaye.
+      </p>
+    </div>
+
+    <div class="about-media">
+      <div class="play">▶</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">What We Do</div>
+      <h2>Creative Services For Your Business</h2>
+      <p>Ek hi jagah par aapke social media aur promotional content ki zaroori services.</p>
+    </div>
+
+    <div class="services">
+      <article class="service"><div class="icon">🎬</div><h3>Reels & Video Editing</h3><p>Instagram Reels, Shorts aur promotional videos ke liye engaging edits.</p></article>
+      <article class="service"><div class="icon">📹</div><h3>Professional Video Shoot</h3><p>Shop, product aur business ke liye professional video shooting.</p></article>
+      <article class="service"><div class="icon">🤖</div><h3>AI Video Creation</h3><p>Creative AI-based promotional videos aur social media content.</p></article>
+      <article class="service"><div class="icon">🎨</div><h3>Poster & Creative Design</h3><p>Offers, festivals, products aur promotions ke liye attractive designs.</p></article>
+      <article class="service"><div class="icon">📸</div><h3>Product Photography</h3><p>Products ko clean aur professional visual presentation ke saath showcase karein.</p></article>
+      <article class="service"><div class="icon">📱</div><h3>Social Media Content</h3><p>Consistent content ideas aur creatives ke through social presence ko organised rakhein.</p></article>
+      <article class="service"><div class="icon">🏪</div><h3>Shop & Business Promotion</h3><p>Local shops aur businesses ke liye promotional content.</p></article>
+      <article class="service"><div class="icon">▶️</div><h3>YouTube Editing</h3><p>YouTube Shorts aur long-form videos ke liye professional editing.</p></article>
+      <article class="service"><div class="icon">✨</div><h3>Logo & Branding</h3><p>Logo, visual identity aur branding creatives for your business.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Our Process</div>
+      <h2>Idea Se Final Content Tak</h2>
+    </div>
+
+    <div class="process">
+      <div class="step"><div class="num">01</div><h3>Discuss</h3><p>Aapke business aur requirement ko samajhte hain.</p></div>
+      <div class="step"><div class="num">02</div><h3>Plan</h3><p>Content idea aur creative direction decide karte hain.</p></div>
+      <div class="step"><div class="num">03</div><h3>Create</h3><p>Shoot, design, editing aur AI tools se content create karte hain.</p></div>
+      <div class="step"><div class="num">04</div><h3>Deliver</h3><p>Final content ko ready karke aapko deliver karte hain.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Packages</div>
+      <h2>Choose Your Content Plan</h2>
+      <p>Aap apne business ki requirement ke according plan choose kar sakte hain.</p>
+    </div>
+
+    <div class="packages">
+      <div class="package">
+        <h3>Basic</h3>
+        <div class="price">₹1,000 <small>/month</small></div>
+        <ul>
+          <li>8 Reels</li><li>12 Posters</li><li>Video Shoot</li>
+          <li>Basic Editing</li><li>Hashtag Research</li><li>Monthly Report</li>
+        </ul>
+        <a class="btn btn-outline" href="https://wa.me/919644538670?text=Hello%20K07%20MEDIA%2C%20I%20am%20interested%20in%20the%20Basic%20package." target="_blank">Enquire Now</a>
+      </div>
+
+      <div class="package featured">
+        <h3>Premium</h3>
+        <div class="price">₹1,500 <small>/month</small></div>
+        <ul>
+          <li>12 Reels</li><li>13 Posters</li><li>Video Shoot</li>
+          <li>Professional Editing</li><li>Hashtag Research</li><li>Weekly Strategy</li><li>Priority Support</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/919644538670?text=Hello%20K07%20MEDIA%2C%20I%20am%20interested%20in%20the%20Premium%20package." target="_blank">Choose Premium</a>
+      </div>
+
+      <div class="package">
+        <h3>Business Pro</h3>
+        <div class="price">₹3,000 <small>/month</small></div>
+        <ul>
+          <li>25 Reels</li><li>35 Posts</li><li>Professional Shoot</li>
+          <li>Professional Editing</li><li>AI Video Creation</li><li>Creative Strategy</li><li>Priority Support</li>
+        </ul>
+        <a class="btn btn-outline" href="https://wa.me/919644538670?text=Hello%20K07%20MEDIA%2C%20I%20am%20interested%20in%20the%20Business%20Pro%20package." target="_blank">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact">
+  <div class="container">
+    <div class="cta">
+      <div class="kicker">Let's Work Together</div>
+      <h2>Ready To Make Your Brand Stand Out?</h2>
+      <p>
+        Aapki shop, brand ya business ke liye professional content chahiye?
+        K07 MEDIA ko message karein.
+      </p>
+
+      <div class="buttons" style="justify-content:center">
+        <a class="btn btn-primary" href="https://wa.me/919644538670?text=Hello%20K07%20MEDIA%2C%20I%20want%20to%20discuss%20my%20business%20content." target="_blank">💬 WhatsApp: 9644538670</a>
+        <a class="btn btn-outline" href="https://instagram.com/k07__media" target="_blank">Instagram @k07__media</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <div class="logo">
+        <div class="logo-wrap">
+          <div class="logo-mark">K<span>O</span>7</div>
+          <div class="logo-text">MEDIA</div>
+        </div>
+      </div>
+      <p style="margin-top:8px">We Create. You Grow.</p>
+    </div>
+    <div class="social">
+      <a href="https://instagram.com/k07__media" target="_blank">Instagram</a>
+      <a href="https://wa.me/919644538670" target="_blank">WhatsApp</a>
+    </div>
+    <p>© 2026 K07 MEDIA. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('menu').classList.toggle('active');
+}
+document.querySelectorAll('.menu a').forEach(link=>{
+  link.addEventListener('click',()=>{
+    document.getElementById('menu').classList.remove('active');
+  });
+});
+</script>
+
+</body>
+</html>
